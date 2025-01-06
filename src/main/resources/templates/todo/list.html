@@ -6,6 +6,10 @@
 <body>
     <h2>ToDo一覧</h2>
     <!-- Flashメッセージの表示 -->
+        <!-- Flashメッセージの表示 -->
+    <p th:if="${message}" th:text="${message}" 
+        style="color: blue;">完了メッセージ
+    </p>
     <p th:if="${errorMessage}" 
         th:text="${errorMessage}" style="color: red;">
         エラーメッセージ
@@ -30,5 +34,6 @@
             </tr>
         </tbody>
     </table>
+    <a th:href="@{/todos/form}">新規登録</a>
 </body>
 </html>
