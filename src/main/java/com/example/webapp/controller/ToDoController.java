@@ -120,4 +120,17 @@ public class ToDoController {
         // PRGパターン
         return "redirect:/todos";
     }
+    
+    /**
+     * 指定されたIDの「すること」を削除します。
+     */
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id, RedirectAttributes attributes) {
+        // 削除処理
+    	toDoService.deleteToDo(id);
+        // フラッシュメッセージ
+        attributes.addFlashAttribute("message", "ToDoが削除されました");
+        // PRGパターン
+        return "redirect:/todos";
+    }
 }
