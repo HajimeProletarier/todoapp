@@ -14,8 +14,8 @@ public class UserConfig {
 	@Bean
 	UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
 		UserDetails user = User.builder()
-				.username("customUser") // ユーザー名
-				.password(passwordEncoder.encode("customPassword"))
+				.username("UserName") // ユーザー名
+				.password(passwordEncoder.encode("OpossumWorld"))
 				.roles("USER") // 権限
 				.build();
 
